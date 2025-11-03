@@ -9,7 +9,7 @@ const Listing = require("../models/listing.js");
 const validateListing = (req,res,next) =>{
   let {error} = listingSchema.validate(req.body);
   if(error){
-    let errMsg = error.details.map((el) => el.message).join (","); // erro ke and kafi sari object form me detail aarhi h ye line unhi detail pe map kr rhih to seareate , se join kr rha h kbhi addtions erro detail aati h to show ho jayeaga
+    let errMsg = error.details.map((el) => el.message).join (","); 
     throw new ExpressError(400,errMsg);
   } else{
     next();
@@ -35,7 +35,7 @@ router.get("/:id", wrapAsync(async ( req, res) => {
     let {id} = req.params;
    const  listing =  await Listing.findById(id).populate("reviews");
   //  console.log(listing);
-     const allListings = await Listing.find().populate("reviews");// ye sb all listing data refer kr rhs h jiise review me sb data listing ka review har page pe show krega 
+     const allListings = await Listing.find().populate("reviews");
    res.render("./listings/show.ejs", {listing,allListings}); // 
 }));
 
