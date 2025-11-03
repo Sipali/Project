@@ -6,7 +6,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 
-// model require in routes folder
+
 const  listings = require("./routes/listing.js");
 const  reviews = require("./routes/review.js");
 
@@ -32,7 +32,6 @@ app.get("/",(req,res)=>{
     res.send("'Hii, I am root");
 });
 
-// yha pe require kr rhe h listing.js file ko vo ek model ka api call h usme sb
 app.use("/listings" , listings);
 app.use("/listings/:id/reviews", reviews);
 
