@@ -20,7 +20,7 @@ body{
 }
 .nav-link{
     color: #222222 !important;
-    /* imp mean jaise custom use kr rhe h bootatrap ka navbar ab chahte h ye color oveeride kr jayega to imp kr dia ye color apply ho jayega */
+    
 }
 .f-info-links a{
 text-decoration: none;
@@ -60,7 +60,6 @@ text-decoration: underline;
     border-radius: 1rem !important;
     width: 100% !important;
     object-fit: cover !important; 
-    /* object fit mean continer ki width hoehft jitni us hisab se image ko rop kr ke set kr dega landscape me jyada  */
 }
 
 .card-body{
@@ -72,7 +71,7 @@ text-decoration: underline;
 
 .listing-link{
     text-decoration: none !important;
-    color: inherit !important;   /* parent ka color le lega */
+    color: inherit !important;   
   display: block;
 }
 /* card effect */
