@@ -11,7 +11,7 @@ const Listing = require("../models/listing.js");
 const validateReview = (req,res,next) =>{
   let {error} = reviewSchema.validate(req.body);
   if(error){
-    let errMsg = error.details.map((el) => el.message).join (","); // erro ke and kafi sari object form me detail aarhi h ye line unhi detail pe map kr rhih to seareate , se join kr rha h kbhi addtions erro detail aati h to show ho jayeaga
+    let errMsg = error.details.map((el) => el.message).join (","); 
     throw new ExpressError(400,errMsg);
   } else{
     next();
@@ -21,7 +21,7 @@ const validateReview = (req,res,next) =>{
 //review post route
 router.post("/" , validateReview,wrapAsync(async (req,res) =>{
   let listing =  await  Listing.findById(req.params.id);
-  let newReview = new Review (req.body.review); // ye jo new Review h ye model name h or reqbody me jo review h aa rha hshow.ejs s=file se review object
+  let newReview = new Review (req.body.review); 
   listing.reviews.push(newReview);
   
    await newReview.save();
